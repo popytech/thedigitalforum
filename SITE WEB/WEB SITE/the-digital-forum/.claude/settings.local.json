@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\('Linkedin:', !!l.Linkedin, 'Facebook:', !!l.Facebook, 'LinkedinIcon:', !!l.LinkedinIcon\\)\")"
+    ]
+  }
+}

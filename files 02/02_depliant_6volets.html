@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1122px;height:794px;overflow:hidden;font-family:'Barlow',sans-serif;}
+.depliant{width:1122px;height:794px;display:grid;grid-template-columns:repeat(6,187px);}
+.volet{height:794px;position:relative;overflow:hidden;padding:28px 20px;}
+
+/* VOLET 1 — COUVERTURE */
+.v1{background:#0A1810;}
+.v1 .top-bar{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#1B6B3A,#A8FF78);}
+.v1 .icon{margin:20px 0 10px;}
+.v1 .the{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:#A8FF78;letter-spacing:5px;}
+.v1 .title{font-family:'Bebas Neue',sans-serif;font-size:52px;color:#fff;line-height:0.87;letter-spacing:2px;}
+.v1 .title span{color:#A8FF78;}
+.v1 .divider{width:100%;height:1.5px;background:rgba(168,255,120,0.35);margin:10px 0;}
+.v1 .sub{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:#A8FF78;letter-spacing:4px;}
+.v1 .tagline{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.4;margin-top:16px;}
+.v1 .tagline strong{color:#A8FF78;}
+.v1 .badge{background:#1B6B3A;border:1px solid rgba(168,255,120,0.3);border-radius:12px;padding:5px 12px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:#A8FF78;display:inline-block;margin-top:14px;letter-spacing:1px;}
+.v1 .contact{position:absolute;bottom:16px;left:20px;right:20px;}
+.v1 .contact p{font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px;}
+
+/* VOLET 2 — POURQUOI */
+.v2{background:#F2F7F4;border-left:1px solid rgba(27,107,58,0.15);}
+.v2 .section-label{font-size:9px;font-weight:700;letter-spacing:3px;color:#27AE60;text-transform:uppercase;margin-bottom:12px;}
+.v2 h2{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#0A1810;letter-spacing:1px;line-height:1;margin-bottom:14px;}
+.v2 .item{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start;}
+.v2 .item-icon{width:28px;height:28px;background:#1B6B3A;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.v2 .item-text strong{display:block;font-size:12px;font-weight:700;color:#0A1810;margin-bottom:2px;}
+.v2 .item-text p{font-size:11px;color:#555;line-height:1.4;}
+.v2 .stat-band{background:#1B6B3A;margin:0 -20px;padding:10px 20px;margin-top:10px;}
+.v2 .stat-band p{font-size:10px;color:rgba(255,255,255,0.8);line-height:1.5;}
+.v2 .stat-band strong{color:#A8FF78;font-size:18px;display:block;}
+
+/* VOLET 3 — THÈMES */
+.v3{background:#0A1810;}
+.v3 .section-label{font-size:9px;font-weight:700;letter-spacing:3px;color:#A8FF78;text-transform:uppercase;margin-bottom:12px;}
+.v3 h2{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:1px;line-height:1;margin-bottom:16px;}
+.v3 .ed-item{margin-bottom:12px;padding:8px 10px;background:rgba(27,107,58,0.2);border-left:3px solid #1B6B3A;border-radius:0 6px 6px 0;}
+.v3 .ed-item.accent{border-left-color:#A8FF78;background:rgba(168,255,120,0.08);}
+.v3 .ed-num{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:#A8FF78;letter-spacing:2px;}
+.v3 .ed-date{font-size:9px;color:rgba(255,255,255,0.4);margin-top:1px;}
+.v3 .ed-theme{font-size:11px;font-weight:700;color:#fff;margin-top:3px;line-height:1.3;}
+
+/* VOLET 4 — FORMAT */
+.v4{background:#F2F7F4;border-left:1px solid rgba(27,107,58,0.15);}
+.v4 .section-label{font-size:9px;font-weight:700;letter-spacing:3px;color:#27AE60;text-transform:uppercase;margin-bottom:12px;}
+.v4 h2{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#0A1810;letter-spacing:1px;line-height:1;margin-bottom:14px;}
+.v4 .format-row{display:flex;gap:8px;margin-bottom:10px;align-items:center;}
+.v4 .format-key{font-size:10px;font-weight:700;color:#1B6B3A;width:70px;flex-shrink:0;}
+.v4 .format-val{font-size:11px;color:#333;line-height:1.3;}
+.v4 .divider{height:1px;background:rgba(27,107,58,0.12);margin:10px 0;}
+.v4 .public-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;}
+.v4 .public-item{background:#1B6B3A;border-radius:6px;padding:6px;text-align:center;font-size:10px;font-weight:700;color:#fff;}
+
+/* VOLET 5 — SPONSORS */
+.v5{background:#0A1810;}
+.v5 .section-label{font-size:9px;font-weight:700;letter-spacing:3px;color:#A8FF78;text-transform:uppercase;margin-bottom:12px;}
+.v5 h2{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:1px;line-height:1;margin-bottom:14px;}
+.v5 .pack{margin-bottom:10px;padding:8px 10px;background:rgba(255,255,255,0.04);border-radius:6px;border:1px solid;}
+.v5 .pack-bronze{border-color:#CD7F32;}
+.v5 .pack-argent{border-color:#C0C0C0;}
+.v5 .pack-or{border-color:#FFD700;}
+.v5 .pack-off{border-color:#A8FF78;}
+.v5 .pack-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;}
+.v5 .pack-bronze .pack-title{color:#CD7F32;}
+.v5 .pack-argent .pack-title{color:#C0C0C0;}
+.v5 .pack-or .pack-title{color:#FFD700;}
+.v5 .pack-off .pack-title{color:#A8FF78;}
+.v5 .pack-price{font-size:11px;font-weight:700;color:#fff;margin:2px 0;}
+.v5 .pack-items{font-size:10px;color:rgba(255,255,255,0.55);line-height:1.5;}
+
+/* VOLET 6 — CONTACT / BACK */
+.v6{background:#1B6B3A;}
+.v6 .logo-zone{margin-bottom:20px;}
+.v6 .the{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:5px;}
+.v6 .title{font-family:'Bebas Neue',sans-serif;font-size:44px;color:#fff;line-height:0.87;letter-spacing:2px;}
+.v6 .divider{width:100%;height:1.5px;background:rgba(255,255,255,0.25);margin:10px 0;}
+.v6 .cta-text{font-size:13px;color:rgba(255,255,255,0.85);line-height:1.5;margin-bottom:18px;font-weight:500;}
+.v6 .cta-text strong{color:#A8FF78;display:block;font-size:15px;margin-bottom:4px;}
+.v6 .contact-item{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+.v6 .contact-icon{font-size:14px;}
+.v6 .contact-text{font-size:11px;color:#fff;font-weight:500;}
+.v6 .hashtag{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:#A8FF78;letter-spacing:1px;margin-top:14px;}
+.v6 .corner-mark{position:absolute;bottom:20px;right:20px;opacity:0.2;}
+</style></head><body>
+<div class="depliant">
+
+<!-- VOLET 1 — COUVERTURE -->
+<div class="volet v1">
+  <div class="top-bar"></div>
+  <div class="icon">
+    <svg viewBox="0 0 64 64" fill="none" style="width:44px;height:44px;">
+      <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" fill="#1B6B3A" stroke="#2ECC71" stroke-width="1.5"/>
+      <rect x="18" y="36" width="5" height="10" rx="1" fill="#A8FF78"/>
+      <rect x="26" y="28" width="5" height="18" rx="1" fill="#A8FF78" opacity="0.8"/>
+      <rect x="34" y="20" width="5" height="26" rx="1" fill="#A8FF78" opacity="0.6"/>
+      <rect x="42" y="14" width="5" height="32" rx="1" fill="#A8FF78" opacity="0.35"/>
+    </svg>
+  </div>
+  <div class="the">THE</div>
+  <div class="divider"></div>
+  <div class="title">DIGITAL<br><span>FORUM</span></div>
+  <div class="divider"></div>
+  <div class="sub">Conakry · Guinée</div>
+  <div class="tagline">Le <strong>rendez-vous bimestriel</strong> du digital entrepreneurial en Afrique.</div>
+  <div class="badge">✦ Édition 01 · Juin 2026</div>
+  <div class="contact">
+    <p>📱 +224 612 960 453</p>
+    <p>🌐 watshop.vercel.app</p>
+    <p>#TheDigitalForum</p>
+  </div>
+</div>
+
+<!-- VOLET 2 — POURQUOI -->
+<div class="volet v2">
+  <div class="section-label">Le contexte</div>
+  <h2>POURQUOI<br>CE PROJET ?</h2>
+  <div class="item">
+    <div class="item-icon">🌍</div>
+    <div class="item-text"><strong>L'Afrique digitale en plein essor</strong><p>600M+ abonnés mobiles. E-commerce +35%/an. La Guinée est au cœur de cette révolution.</p></div>
+  </div>
+  <div class="item">
+    <div class="item-icon">🚫</div>
+    <div class="item-text"><strong>Un vide à combler</strong><p>Aucun événement régulier dédié au digital entrepreneurial en Guinée avant The Digital Forum.</p></div>
+  </div>
+  <div class="item">
+    <div class="item-icon">💡</div>
+    <div class="item-text"><strong>Un public prêt</strong><p>Des milliers d'entrepreneurs, étudiants et freelances cherchent des compétences concrètes et un réseau de qualité.</p></div>
+  </div>
+  <div class="stat-band">
+    <strong>0</strong>
+    <p>événement bimestriel digital certifiant en Guinée avant nous.</p>
+  </div>
+</div>
+
+<!-- VOLET 3 — THÈMES -->
+<div class="volet v3">
+  <div class="section-label">Le programme</div>
+  <h2>6 ÉDITIONS<br>1 AN</h2>
+  <div class="ed-item accent">
+    <div class="ed-num">ÉD. 01</div>
+    <div class="ed-date">Juin 2026</div>
+    <div class="ed-theme">Gagner de l'argent avec le digital</div>
+  </div>
+  <div class="ed-item">
+    <div class="ed-num">ÉD. 02</div>
+    <div class="ed-date">Août 2026</div>
+    <div class="ed-theme">E-commerce & vente en ligne</div>
+  </div>
+  <div class="ed-item">
+    <div class="ed-num">ÉD. 03</div>
+    <div class="ed-date">Oct. 2026</div>
+    <div class="ed-theme">Personal branding & revenus</div>
+  </div>
+  <div class="ed-item">
+    <div class="ed-num">ÉD. 04</div>
+    <div class="ed-date">Déc. 2026</div>
+    <div class="ed-theme">IA & digital en Afrique</div>
+  </div>
+  <div class="ed-item">
+    <div class="ed-num">ÉD. 05</div>
+    <div class="ed-date">Fév. 2027</div>
+    <div class="ed-theme">Financer son projet digital</div>
+  </div>
+  <div class="ed-item accent">
+    <div class="ed-num">ÉD. 06</div>
+    <div class="ed-date">Avr. 2027</div>
+    <div class="ed-theme">Bilan 1 an & Vision Afrique</div>
+  </div>
+</div>
+
+<!-- VOLET 4 — FORMAT -->
+<div class="volet v4">
+  <div class="section-label">Le format</div>
+  <h2>COMMENT<br>ÇA MARCHE ?</h2>
+  <div class="format-row"><div class="format-key">📅 Fréquence</div><div class="format-val">Toutes les 2 mois</div></div>
+  <div class="format-row"><div class="format-key">⏱ Durée</div><div class="format-val">3–4 heures (15h–18h)</div></div>
+  <div class="format-row"><div class="format-key">🎤 Format</div><div class="format-val">3–4 speakers + table ronde + Q&A + networking</div></div>
+  <div class="format-row"><div class="format-key">📍 Lieu</div><div class="format-val">Conakry, Guinée</div></div>
+  <div class="format-row"><div class="format-key">🎟 Accès</div><div class="format-val">Gratuit (Éd.1–2) → Ticketing Éd.3+</div></div>
+  <div class="format-row"><div class="format-key">✅ Certif.</div><div class="format-val">Attestation officielle à chaque édition</div></div>
+  <div class="divider"></div>
+  <div style="font-size:10px;font-weight:700;color:#1B6B3A;margin-bottom:6px;">PUBLIC CIBLE</div>
+  <div class="public-grid">
+    <div class="public-item">🏢 Entrepreneurs</div>
+    <div class="public-item">💻 Freelances</div>
+    <div class="public-item">🎓 Étudiants</div>
+    <div class="public-item">📱 Créateurs</div>
+  </div>
+</div>
+
+<!-- VOLET 5 — SPONSORS -->
+<div class="volet v5">
+  <div class="section-label">Les partenaires</div>
+  <h2>REJOINDRE<br>EN TANT QUE<br>SPONSOR</h2>
+  <div class="pack pack-bronze">
+    <div class="pack-title">BRONZE</div>
+    <div class="pack-price">500 000 GNF</div>
+    <div class="pack-items">Logo affiche · Mention orale · 1 place VIP</div>
+  </div>
+  <div class="pack pack-argent">
+    <div class="pack-title">ARGENT</div>
+    <div class="pack-price">1 000 000 GNF</div>
+    <div class="pack-items">+ Stand J · Post Facebook · 3 places VIP</div>
+  </div>
+  <div class="pack pack-or">
+    <div class="pack-title">OR</div>
+    <div class="pack-price">2 000 000 GNF</div>
+    <div class="pack-items">+ Prise de parole · Visibilité 30j · Rapport</div>
+  </div>
+  <div class="pack pack-off">
+    <div class="pack-title">PARTENAIRE OFFICIEL</div>
+    <div class="pack-price">Sur devis</div>
+    <div class="pack-items">Co-branding complet · Convention 3 éditions</div>
+  </div>
+</div>
+
+<!-- VOLET 6 — CONTACT -->
+<div class="volet v6">
+  <div class="logo-zone">
+    <div class="the">THE</div>
+    <div class="divider"></div>
+    <div class="title">DIGITAL<br>FORUM</div>
+    <div class="divider"></div>
+  </div>
+  <div class="cta-text">
+    <strong>Première édition — Juin 2026</strong>
+    Entrée gratuite. Certification officielle. Réseau de qualité. Rejoignez le mouvement.
+  </div>
+  <div class="contact-item"><div class="contact-icon">📱</div><div class="contact-text">+224 612 960 453</div></div>
+  <div class="contact-item"><div class="contact-icon">🌐</div><div class="contact-text">watshop.vercel.app</div></div>
+  <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-text">Conakry, Guinée</div></div>
+  <div class="contact-item"><div class="contact-icon">🏢</div><div class="contact-text">Popy Tech Agency</div></div>
+  <div class="hashtag">#TheDigitalForum</div>
+  <div class="corner-mark">
+    <svg viewBox="0 0 64 64" fill="none" style="width:60px;height:60px;">
+      <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" fill="none" stroke="#fff" stroke-width="2"/>
+      <rect x="18" y="36" width="5" height="10" rx="1" fill="#fff"/>
+      <rect x="26" y="28" width="5" height="18" rx="1" fill="#fff" opacity="0.8"/>
+      <rect x="34" y="20" width="5" height="26" rx="1" fill="#fff" opacity="0.6"/>
+      <rect x="42" y="14" width="5" height="32" rx="1" fill="#fff" opacity="0.35"/>
+    </svg>
+  </div>
+</div>
+
+</div></body></html>

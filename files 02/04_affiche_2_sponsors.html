@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1080px;height:1350px;overflow:hidden;}
+.affiche{width:1080px;height:1350px;background:#F2F7F4;position:relative;overflow:hidden;font-family:'Barlow',sans-serif;}
+/* Fond */
+.bg-dark{position:absolute;top:0;left:0;right:0;height:480px;background:#0A1810;}
+.top-bar{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#1B6B3A,#A8FF78,#27AE60);}
+.c1{position:absolute;width:500px;height:500px;border-radius:50%;border:1px solid rgba(168,255,120,0.05);top:-200px;right:-100px;}
+/* Header */
+.header{position:absolute;top:28px;left:44px;right:44px;display:flex;align-items:center;justify-content:space-between;}
+.org{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:3px;}
+.logo-zone{display:flex;align-items:center;gap:12px;}
+.logo-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:2px;}
+/* Hero */
+.hero{position:absolute;top:80px;left:44px;right:44px;text-align:center;}
+.hero-pre{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:rgba(168,255,120,0.7);letter-spacing:5px;margin-bottom:10px;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:82px;color:#fff;line-height:0.88;letter-spacing:3px;}
+.hero-title span{color:#A8FF78;}
+.hero-sub{font-family:'Barlow',sans-serif;font-size:18px;color:rgba(255,255,255,0.6);margin-top:14px;line-height:1.4;}
+.hero-sub strong{color:#A8FF78;}
+/* Stats */
+.stats{position:absolute;top:380px;left:44px;right:44px;display:flex;gap:14px;}
+.stat-card{flex:1;background:#fff;border-radius:12px;border:1px solid rgba(27,107,58,0.12);padding:18px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);}
+.stat-val{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#1B6B3A;letter-spacing:1px;}
+.stat-label{font-family:'Barlow',sans-serif;font-size:12px;color:#888;margin-top:2px;}
+/* Packs */
+.packs-title{position:absolute;top:560px;left:44px;right:44px;display:flex;align-items:center;gap:14px;}
+.packs-txt{font-size:11px;font-weight:700;letter-spacing:4px;color:#1B6B3A;text-transform:uppercase;}
+.packs-line{flex:1;height:1px;background:rgba(27,107,58,0.15);}
+.packs{position:absolute;top:600px;left:44px;right:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.pack-card{background:#fff;border-radius:12px;border:2px solid;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.06);}
+.pack-header{padding:14px;text-align:center;}
+.pack-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;}
+.pack-price{font-family:'Bebas Neue',sans-serif;font-size:28px;margin-top:4px;}
+.pack-body{padding:0 14px 14px;}
+.pack-item{font-size:11px;color:#555;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;gap:6px;}
+.pack-item::before{content:"✓";color:#1B6B3A;font-weight:700;flex-shrink:0;}
+.pack-bronze{border-color:#CD7F32;}
+.pack-bronze .pack-name,.pack-bronze .pack-price{color:#CD7F32;}
+.pack-argent{border-color:#999;}
+.pack-argent .pack-name,.pack-argent .pack-price{color:#777;}
+.pack-or{border-color:#D4A500;}
+.pack-or .pack-name,.pack-or .pack-price{color:#B8860B;}
+.pack-off{border-color:#1B6B3A;background:#E8F5E9;}
+.pack-off .pack-header{background:#1B6B3A;}
+.pack-off .pack-name,.pack-off .pack-price{color:#A8FF78;}
+/* Benefits */
+.benefits{position:absolute;top:1010px;left:44px;right:44px;background:#0A1810;border-radius:16px;padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+.benefit-item{display:flex;gap:12px;align-items:flex-start;}
+.benefit-icon{width:36px;height:36px;border-radius:8px;background:#1B6B3A;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.benefit-title{font-size:13px;font-weight:700;color:#fff;}
+.benefit-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;line-height:1.4;}
+/* Footer */
+.footer{position:absolute;bottom:0;left:0;right:0;height:72px;background:#1B6B3A;display:flex;align-items:center;padding:0 44px;justify-content:space-between;}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;letter-spacing:2px;}
+.footer-cta{font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.9);}
+.footer-hash{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#A8FF78;letter-spacing:1px;}
+</style></head><body>
+<div class="affiche">
+  <div class="bg-dark"></div><div class="c1"></div><div class="top-bar"></div>
+  <div class="header">
+    <div class="org">POPY TECH AGENCY</div>
+    <div class="logo-zone">
+      <svg viewBox="0 0 64 64" fill="none" style="width:28px;height:28px;"><polygon points="32,4 58,18 58,46 32,60 6,46 6,18" fill="#1B6B3A" stroke="#2ECC71" stroke-width="2"/><rect x="18" y="36" width="5" height="10" rx="1" fill="#A8FF78"/><rect x="26" y="28" width="5" height="18" rx="1" fill="#A8FF78" opacity="0.8"/><rect x="34" y="20" width="5" height="26" rx="1" fill="#A8FF78" opacity="0.6"/></svg>
+      <div class="logo-name">THE DIGITAL FORUM</div>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="hero-pre">DEVENEZ PARTENAIRE</div>
+    <div class="hero-title">ASSOCIEZ<br>VOTRE <span>MARQUE</span><br>AU FUTUR</div>
+    <div class="hero-sub">The Digital Forum — le premier événement bimestriel<br>du digital entrepreneurial en Guinée. <strong>Première édition : Juin 2026.</strong></div>
+  </div>
+  <div class="stats">
+    <div class="stat-card"><div class="stat-val">300+</div><div class="stat-label">Participants / édition</div></div>
+    <div class="stat-card"><div class="stat-val">6</div><div class="stat-label">Éditions par an</div></div>
+    <div class="stat-card"><div class="stat-val">20K+</div><div class="stat-label">Reach digital estimé</div></div>
+    <div class="stat-card"><div class="stat-val">100%</div><div class="stat-label">Public qualifié</div></div>
+  </div>
+  <div class="packs-title"><div class="packs-txt">Les packs disponibles</div><div class="packs-line"></div></div>
+  <div class="packs">
+    <div class="pack-card pack-bronze"><div class="pack-header"><div class="pack-name">BRONZE</div><div class="pack-price">500K</div><div style="font-size:10px;color:#999;">GNF</div></div><div class="pack-body"><div class="pack-item">Logo affiche officielle</div><div class="pack-item">Mention orale</div><div class="pack-item">Supports digitaux</div><div class="pack-item">1 place VIP</div></div></div>
+    <div class="pack-card pack-argent"><div class="pack-header"><div class="pack-name">ARGENT</div><div class="pack-price">1M</div><div style="font-size:10px;color:#999;">GNF</div></div><div class="pack-body"><div class="pack-item">Tout Bronze inclus</div><div class="pack-item">Stand 1m×1m jour J</div><div class="pack-item">Post Facebook dédié</div><div class="pack-item">3 places VIP</div></div></div>
+    <div class="pack-card pack-or"><div class="pack-header"><div class="pack-name">OR</div><div class="pack-price">2M</div><div style="font-size:10px;color:#999;">GNF</div></div><div class="pack-body"><div class="pack-item">Tout Argent inclus</div><div class="pack-item">5 min prise de parole</div><div class="pack-item">Visibilité 30 jours</div><div class="pack-item">Rapport post-événement</div></div></div>
+    <div class="pack-card pack-off"><div class="pack-header"><div class="pack-name">OFFICIEL</div><div class="pack-price">DEVIS</div></div><div class="pack-body"><div class="pack-item">Co-branding complet</div><div class="pack-item">Prise de parole étendue</div><div class="pack-item">3 éditions convention</div><div class="pack-item">Contenu illimité</div></div></div>
+  </div>
+  <div class="benefits">
+    <div class="benefit-item"><div class="benefit-icon">🎯</div><div><div class="benefit-title">Public prescripteur</div><div class="benefit-sub">Entrepreneurs, décideurs et influenceurs locaux — pas le grand public anonyme</div></div></div>
+    <div class="benefit-item"><div class="benefit-icon">📊</div><div><div class="benefit-title">Rapport post-édition</div><div class="benefit-sub">Chiffres réels de portée, profil participants, retombées mesurables</div></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🏆</div><div><div class="benefit-title">Partenaire fondateur</div><div class="benefit-sub">Être là dès le départ — avant que l'événement devienne la référence nationale</div></div></div>
+  </div>
+  <div class="footer">
+    <div class="footer-brand">THE DIGITAL FORUM</div>
+    <div class="footer-cta">📱 +224 612 960 453 · 🌐 watshop.vercel.app</div>
+    <div class="footer-hash">#TheDigitalForum</div>
+  </div>
+</div></body></html>

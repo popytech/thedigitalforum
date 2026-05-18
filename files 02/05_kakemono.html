@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:800px;height:2000px;overflow:hidden;}
+.kak{width:800px;height:2000px;background:#0A1810;position:relative;overflow:hidden;font-family:'Barlow',sans-serif;}
+/* Barres */
+.t-bar{position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#1B6B3A,#A8FF78,#27AE60);}
+.b-bar{position:absolute;bottom:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#1B6B3A,#A8FF78,#27AE60);}
+.l-bar{position:absolute;left:0;top:0;bottom:0;width:8px;background:#1B6B3A;}
+.r-bar{position:absolute;right:0;top:0;bottom:0;width:8px;background:#1B6B3A;}
+/* Cercles fond */
+.c1{position:absolute;width:500px;height:500px;border-radius:50%;border:1px solid rgba(168,255,120,0.05);top:-150px;right:-150px;}
+.c2{position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(27,107,58,0.08);bottom:300px;left:-100px;}
+.c3{position:absolute;width:250px;height:250px;border-radius:50%;border:1px solid rgba(168,255,120,0.04);top:900px;right:50px;}
+/* Logo zone */
+.logo-zone{position:absolute;top:50px;left:0;right:0;text-align:center;}
+.the{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:#A8FF78;letter-spacing:8px;margin-bottom:8px;}
+.title{font-family:'Bebas Neue',sans-serif;font-size:100px;color:#fff;line-height:0.85;letter-spacing:4px;}
+.title span{color:#A8FF78;}
+.sub{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:rgba(168,255,120,0.7);letter-spacing:7px;margin-top:8px;}
+.h-line{width:200px;height:2px;background:rgba(46,204,113,0.4);margin:12px auto;}
+/* Tagline */
+.tagline-zone{position:absolute;top:380px;left:44px;right:44px;text-align:center;}
+.tagline{font-family:'Barlow',sans-serif;font-size:20px;font-weight:500;color:rgba(255,255,255,0.75);line-height:1.4;}
+.tagline strong{color:#A8FF78;font-weight:700;}
+/* Edition badge */
+.ed-badge{position:absolute;top:480px;left:50%;transform:translateX(-50%);background:#1B6B3A;border:1px solid rgba(168,255,120,0.35);border-radius:24px;padding:10px 30px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:#A8FF78;letter-spacing:2px;white-space:nowrap;}
+/* Thème */
+.theme-zone{position:absolute;top:560px;left:44px;right:44px;text-align:center;}
+.theme-pre{font-size:11px;font-weight:700;letter-spacing:3px;color:#A8FF78;text-transform:uppercase;margin-bottom:8px;}
+.theme-title{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;letter-spacing:2px;line-height:1.0;}
+.theme-sub{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);margin-top:10px;line-height:1.5;}
+/* H separator */
+.h-sep{position:absolute;left:44px;right:44px;height:2px;background:linear-gradient(90deg,transparent,rgba(168,255,120,0.3),transparent);}
+/* Infos */
+.infos-zone{position:absolute;top:820px;left:44px;right:44px;}
+.info-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;padding:14px 18px;background:rgba(27,107,58,0.15);border:1px solid rgba(168,255,120,0.1);border-radius:10px;}
+.info-icon{width:38px;height:38px;border-radius:50%;background:#1B6B3A;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.info-main{font-family:'Barlow',sans-serif;font-size:16px;font-weight:700;color:#fff;}
+.info-sub{font-family:'Barlow',sans-serif;font-size:12px;color:rgba(255,255,255,0.45);}
+/* Public */
+.public-zone{position:absolute;top:1070px;left:44px;right:44px;}
+.pub-title{font-size:11px;font-weight:700;letter-spacing:3px;color:#A8FF78;text-transform:uppercase;margin-bottom:14px;}
+.pub-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.pub-item{background:rgba(255,255,255,0.04);border:1px solid rgba(168,255,120,0.1);border-radius:8px;padding:12px;display:flex;align-items:center;gap:10px;}
+.pub-icon{font-size:20px;}
+.pub-txt{font-size:13px;font-weight:600;color:#fff;}
+/* Organisateur */
+.orga-zone{position:absolute;top:1280px;left:44px;right:44px;}
+.orga-card{background:rgba(27,107,58,0.15);border:1px solid rgba(168,255,120,0.2);border-radius:12px;padding:24px;display:flex;gap:20px;align-items:center;}
+.orga-avatar{width:70px;height:70px;border-radius:50%;background:#1B6B3A;border:2px solid #A8FF78;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:26px;color:#A8FF78;flex-shrink:0;}
+.orga-name{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
+.orga-role{font-size:12px;color:#A8FF78;margin-top:3px;}
+.orga-agency{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;}
+/* Sponsors */
+.sponsors-zone{position:absolute;top:1440px;left:44px;right:44px;}
+.sp-title{font-size:11px;font-weight:700;letter-spacing:3px;color:#A8FF78;text-transform:uppercase;margin-bottom:14px;}
+.sp-packs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.sp-pack{text-align:center;padding:10px 6px;border-radius:8px;border:1px solid;}
+.sp-pack-name{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;}
+.sp-pack-price{font-family:'Bebas Neue',sans-serif;font-size:18px;margin-top:2px;}
+.sp-bronze{border-color:#CD7F32;}.sp-bronze .sp-pack-name,.sp-bronze .sp-pack-price{color:#CD7F32;}
+.sp-argent{border-color:#999;}.sp-argent .sp-pack-name,.sp-argent .sp-pack-price{color:#999;}
+.sp-or{border-color:#D4A500;}.sp-or .sp-pack-name,.sp-or .sp-pack-price{color:#D4A500;}
+.sp-off{border-color:#A8FF78;background:rgba(168,255,120,0.05);}.sp-off .sp-pack-name,.sp-off .sp-pack-price{color:#A8FF78;}
+/* Contact */
+.contact-zone{position:absolute;top:1620px;left:44px;right:44px;}
+.cta-text{font-family:'Barlow',sans-serif;font-size:16px;font-weight:700;color:#fff;text-align:center;margin-bottom:20px;line-height:1.4;}
+.cta-text span{color:#A8FF78;}
+.contact-items{display:flex;flex-direction:column;gap:10px;}
+.c-item{display:flex;align-items:center;justify-content:center;gap:12px;font-size:16px;font-weight:500;color:#fff;}
+.hashtag{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:#A8FF78;letter-spacing:2px;text-align:center;margin-top:16px;}
+/* Popy Tech footer */
+.pt-footer{position:absolute;bottom:20px;left:0;right:0;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:3px;}
+</style></head><body>
+<div class="kak">
+  <div class="c1"></div><div class="c2"></div><div class="c3"></div>
+  <div class="t-bar"></div><div class="b-bar"></div><div class="l-bar"></div><div class="r-bar"></div>
+  <!-- Logo -->
+  <div class="logo-zone">
+    <div class="the">THE</div>
+    <div class="h-line"></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;">
+      <svg viewBox="0 0 64 64" fill="none" style="width:70px;height:70px;"><polygon points="32,4 58,18 58,46 32,60 6,46 6,18" fill="#1B6B3A" stroke="#2ECC71" stroke-width="1.5"/><rect x="18" y="36" width="5" height="10" rx="1" fill="#A8FF78"/><rect x="26" y="28" width="5" height="18" rx="1" fill="#A8FF78" opacity="0.8"/><rect x="34" y="20" width="5" height="26" rx="1" fill="#A8FF78" opacity="0.6"/><rect x="42" y="14" width="5" height="32" rx="1" fill="#A8FF78" opacity="0.35"/><circle cx="32" cy="12" r="2" fill="#A8FF78"/></svg>
+      <div class="title">DIGITAL<br><span>FORUM</span></div>
+    </div>
+    <div class="h-line"></div>
+    <div class="sub">Conakry · Guinée · 2026</div>
+  </div>
+  <!-- Tagline -->
+  <div class="tagline-zone">
+    <div class="tagline">Le <strong>rendez-vous bimestriel</strong><br>du digital entrepreneurial<br>en Afrique.</div>
+  </div>
+  <!-- Badge -->
+  <div class="ed-badge">✦ ÉDITION 01 · JUIN 2026 · ENTRÉE GRATUITE</div>
+  <!-- Thème -->
+  <div class="theme-zone">
+    <div class="theme-pre">Sous le thème</div>
+    <div class="theme-title">GAGNER DE L'ARGENT<br>AVEC LE DIGITAL</div>
+    <div class="theme-sub">Comment transformer tes compétences<br>en revenus réels et durables depuis l'Afrique</div>
+  </div>
+  <!-- Sep -->
+  <div class="h-sep" style="top:790px;"></div>
+  <!-- Infos -->
+  <div class="infos-zone">
+    <div class="info-row"><div class="info-icon">📅</div><div><div class="info-main">Juin 2026 · 15h00 – 18h00</div><div class="info-sub">Durée : 3 heures</div></div></div>
+    <div class="info-row"><div class="info-icon">📍</div><div><div class="info-main">Lieu à confirmer · Conakry, Guinée</div><div class="info-sub">Annonce prochainement</div></div></div>
+    <div class="info-row"><div class="info-icon">🎟</div><div><div class="info-main">Accès 100% Gratuit</div><div class="info-sub">Attestation officielle remise à chaque participant</div></div></div>
+  </div>
+  <!-- Public -->
+  <div class="public-zone">
+    <div class="pub-title">Public cible</div>
+    <div class="pub-grid">
+      <div class="pub-item"><div class="pub-icon">🏢</div><div class="pub-txt">Entrepreneurs</div></div>
+      <div class="pub-item"><div class="pub-icon">💻</div><div class="pub-txt">Freelances</div></div>
+      <div class="pub-item"><div class="pub-icon">🎓</div><div class="pub-txt">Étudiants</div></div>
+      <div class="pub-item"><div class="pub-icon">📱</div><div class="pub-txt">Créateurs</div></div>
+    </div>
+  </div>
+  <!-- Sep -->
+  <div class="h-sep" style="top:1250px;"></div>
+  <!-- Organisateur -->
+  <div class="orga-zone">
+    <div class="orga-card">
+      <div class="orga-avatar">PT</div>
+      <div>
+        <div class="orga-name">POPY TRAORÉ</div>
+        <div class="orga-role">Organisateur · CEO, Popy Tech Agency</div>
+        <div class="orga-agency">Consultant & Formateur en Digital · Conakry, Guinée</div>
+      </div>
+    </div>
+  </div>
+  <!-- Sponsors -->
+  <div class="sponsors-zone">
+    <div class="sp-title">Devenir partenaire</div>
+    <div class="sp-packs">
+      <div class="sp-pack sp-bronze"><div class="sp-pack-name">BRONZE</div><div class="sp-pack-price">500K</div><div style="font-size:9px;color:#CD7F32;">GNF</div></div>
+      <div class="sp-pack sp-argent"><div class="sp-pack-name">ARGENT</div><div class="sp-pack-price">1M</div><div style="font-size:9px;color:#999;">GNF</div></div>
+      <div class="sp-pack sp-or"><div class="sp-pack-name">OR</div><div class="sp-pack-price">2M</div><div style="font-size:9px;color:#D4A500;">GNF</div></div>
+      <div class="sp-pack sp-off"><div class="sp-pack-name">OFFICIEL</div><div class="sp-pack-price">DEVIS</div></div>
+    </div>
+  </div>
+  <!-- Sep -->
+  <div class="h-sep" style="top:1600px;"></div>
+  <!-- Contact -->
+  <div class="contact-zone">
+    <div class="cta-text">Inscriptions & infos : <span>+224 612 960 453</span></div>
+    <div class="contact-items">
+      <div class="c-item">📱 +224 612 960 453 (WhatsApp)</div>
+      <div class="c-item">🌐 watshop.vercel.app</div>
+      <div class="c-item">📍 Conakry, Guinée</div>
+    </div>
+    <div class="hashtag">#TheDigitalForum · #PopyTech · #DigitalAfrique</div>
+  </div>
+  <div class="pt-footer">POPY TECH AGENCY · CONAKRY · GUINÉE</div>
+</div></body></html>
