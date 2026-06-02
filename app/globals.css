@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green-primary: #1B6B3A;
+  --green-mid: #27AE60;
+  --green-light: #2ECC71;
+  --lime: #A8FF78;
+  --dark-bg: #0A1810;
+  --dark-card: #0D2218;
+  --dark-2: #1A3328;
+  --light-green: #D4EDDA;
+  --white: #FFFFFF;
+  --gray-light: #F2F7F4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  font-family: var(--font-barlow), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero title — effet BLACK via text-shadow pour épaissir Bebas Neue */
+.hero-title {
+  text-shadow: 1px 0 0 currentColor, -1px 0 0 currentColor;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green-primary);
+  border-radius: 3px;
+}
+
+/* Lime top bar */
+.lime-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #1B6B3A, #A8FF78, #27AE60);
+}
+
+/* Selection */
+::selection {
+  background: rgba(168, 255, 120, 0.3);
+  color: #fff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #27AE60, #A8FF78);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+  .container-site {
+    @apply mx-auto max-w-site w-full;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green-primary text-white font-condensed font-semibold tracking-wider uppercase px-8 py-3 rounded-lg transition-all duration-200 hover:bg-green-mid hover:shadow-green-md active:scale-95;
+  }
+  .btn-outline {
+    @apply border-2 border-green-primary text-white font-condensed font-semibold tracking-wider uppercase px-8 py-3 rounded-lg transition-all duration-200 hover:border-lime hover:text-lime active:scale-95;
+  }
+  .card-dark {
+    @apply bg-dark-card border border-green-primary/20 rounded-xl overflow-hidden;
+  }
+
+  /* Titre de section — Bebas Neue BOLD */
+  .section-title {
+    @apply font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase leading-none tracking-normal;
+  }
+
+  /* Sous-titre — Barlow Condensed, clairement plus petit */
+  .section-subtitle {
+    @apply font-condensed text-lg sm:text-xl md:text-2xl text-gray-300 font-medium tracking-wide;
+  }
+
+  /* Label au-dessus des titres — petite capsule verte */
+  .section-label {
+    @apply font-condensed text-lime text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 block;
+  }
+
+  /* Corps de texte standard */
+  .body-text {
+    @apply font-body text-base text-gray-400 leading-relaxed;
+  }
+}

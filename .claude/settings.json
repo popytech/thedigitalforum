@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse \"d:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\\\\public\\\\images\")",
+      "Bash(Select-Object FullName, LastWriteTime)",
+      "Bash(Sort-Object LastWriteTime -Descending)",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\\\\public\\\\images\" -File | ForEach-Object { \"$\\($_.LastWriteTime\\) | $\\($_.FullName\\)\" } | Sort-Object -Descending)",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\\\\public\\\\images\" -File | ForEach-Object { \"$\\($_.LastWriteTime\\) | $\\($_.Name\\)\" } | Sort-Object -Descending)",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\\\\public\\\\images\" -File | Where-Object { $_.LastWriteTime -gt \\(Get-Date \"2026-05-01\"\\) } | ForEach-Object { $_.FullName })",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd \"d:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\"; & \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" run dev)",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\\\\public\\\\images\" -File | ForEach-Object { \"$\\($_.LastWriteTime\\) | $\\($_.Name\\)\" } | Sort-Object -Descending | Select-Object -First 5)",
+      "PowerShell(Rename-Item \"D:\\\\the digital forum\\\\SITE WEB\\\\WEB SITE\\\\the-digital-forum\\\\public\\\\images\\\\speakers\\\\Mory Konate - Fondateur  Billet Facile.jpeg\" \"mory-konate.jpeg\")"
+    ]
+  }
+}
