@@ -1,38 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# The Digital Forum
 
-First, run the development server:
+### Entrepreneuriat digital · Networking · Certification · Impact
+
+**A digital entrepreneurship event platform built for the Guinean ecosystem.**
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Supabase](https://img.shields.io/badge/Supabase-Backend-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
+
+**Built by [Popy Traoré](https://github.com/popytech) · POPY TECH**
+
+</div>
+
+---
+
+## Overview
+
+**The Digital Forum** is a platform supporting a recurring series of events focused on digital entrepreneurship in Guinea.
+
+The product is designed to handle more than a marketing landing page: it centralizes the public event experience, participant registration, confirmation flows, check-in operations, editions, speakers, sponsors, gallery content and administration.
+
+The project reflects a product-first approach: connect **event operations**, **participant experience** and **digital visibility** inside one platform.
+
+---
+
+## Product scope
+
+The current application includes dedicated flows for:
+
+- Event landing and institutional presentation
+- Participant registration
+- Registration confirmation
+- Event check-in
+- Editions and event history
+- Speaker presentation
+- Sponsor presentation
+- Team presentation
+- Media gallery
+- Contact experience
+- Administrative area
+- API routes and backend integrations
+
+---
+
+## Architecture
+
+```text
+app/
+├── a-propos/       # About the initiative
+├── admin/          # Administration
+├── api/            # Server/API routes
+├── check-in/       # Participant check-in
+├── confirmation/   # Registration confirmation
+├── contact/        # Contact flow
+├── editions/       # Event editions
+├── equipe/         # Team
+├── galerie/        # Media gallery
+├── inscription/    # Registration
+├── speakers/       # Speakers
+└── sponsors/       # Partners & sponsors
+
+components/         # Reusable UI and layout components
+lib/                # Application services and utilities
+supabase/           # Database/backend resources
+```
+
+---
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 14 |
+| Language | TypeScript |
+| UI | React 18 |
+| Styling | Tailwind CSS |
+| Database / Backend | Supabase |
+| Validation | Zod |
+| Forms | React Hook Form |
+| Motion | Framer Motion |
+| PDF generation | React PDF |
+| QR workflows | QRCode / QRCode React |
+| Email | Nodemailer |
+| Messaging integration | Africa's Talking |
+
+---
+
+## Product capabilities
+
+### Registration & participant flow
+The platform supports a structured journey from discovery to registration, confirmation and on-site check-in.
+
+### Event operations
+An administrative area and API layer support the operational side of the event rather than keeping the website purely informational.
+
+### Event ecosystem
+Dedicated sections surface speakers, sponsors, team members, editions and media content to make the platform reusable across multiple editions.
+
+### Communication tooling
+The codebase includes email, SMS/messaging, PDF and QR-oriented dependencies for participant communication and event operations.
+
+---
+
+## Local development
+
+### 1. Clone
+
+```bash
+git clone https://github.com/popytech/thedigitalforum.git
+cd thedigitalforum
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a local `.env.local` file and configure the required Supabase and application integration variables for your environment.
+
+> Never commit production secrets, API keys or service credentials.
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Product direction
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The long-term direction is to make **The Digital Forum** a reusable digital layer for event discovery, registration, participant management, certification and community building around digital entrepreneurship in Guinea.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Creator
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Popy Traoré**  
+Tech Entrepreneur · Product Builder · Digital Consultant
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# thedigitalforum
-# thedigitalforum
+- GitHub: [@popytech](https://github.com/popytech)
+- Website: [popytech.com](https://popytech.com)
+- Training: [popytech.online](https://popytech.online)
+
+---
+
+<div align="center">
+
+**Built in Guinea 🇬🇳 · Designed for impact in Africa 🌍**
+
+</div>
